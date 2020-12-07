@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url("background.png");
+}
+
+article {
+    width: 25%;
+    text-align: justify;
+}
+
+h2 {
+    margin: 30px 8px;
+}
+
+p {
+    margin-left: 8px;
+    width: 100%;
+    font-weight: 600;
+}

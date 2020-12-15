@@ -10,13 +10,15 @@ body {
 
 nav {
     background-color: orange;
-    max-height: 4vh;
+    max-height: 6vh;
     border-left: 1px solid orange;
     border-right: 1px solid orange;
 }
 
 nav ul {
     display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
     list-style: none;
 }
 
@@ -26,23 +28,28 @@ nav ul li a {
     text-decoration: none;
     color: #fff;
     background-color: orange;
+    transition-property: color, background-color;
+    transition-duration: 0.5s;
 }
 
 nav ul li:hover a{
     color: orange;
     background-color: white;
+    transition-duration: 0.5s;
 }
 
 .active {
     color: orange;
     background-color: white;
+    transition-property: color, background-color;
+    transition-duration: 0.5s;
 }
 
-nav ul li:hover .active {
+nav ul li:hover ~ li .active {
     color: white;
     background-color: orange;
+    transition-duration: 0.5s;
 }
-
 
 main {
     min-height: 92vh;
@@ -88,4 +95,23 @@ footer li {
     padding: 10px 15px;
     color: saddlebrown;
     font-weight: 600;
+    cursor: pointer;
+}
+
+@media all and (max-width: 800px) {
+    nav {
+        max-height: 30vh;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    nav ul {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    footer ul {
+        flex-direction: column;
+        text-align: center;
+    }
 }

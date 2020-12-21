@@ -42,3 +42,18 @@ console.log('3' + '2' == 2 + '3'); //false
     5) выполняется нестрогое сравнение чисел 5 и 5, как результат будет true
  */
 console.log(2 + Number('3') == Number('3') + 2); // true
+
+console.log(12 / '6'); // 2
+console.log('number' + 15 + 3); // number153
+console.log(15 + 3 + 'number'); // 18number
+// массив приведтся к true, null к false
+console.log([1] > null); // true
+// 'bar' не может привестись к числу, вернет NaN
+console.log('foo' + +'bar'); //fooNaN
+console.log('true' == true); //false
+console.log(false == 'false'); // false
+console.log(null == ''); //false
+// не пустая строка является true
+console.log(!!'false' == !!'true'); //true
+//не пустой массив и строка приводятся к true
+console.log(['x'] == 'x'); //true

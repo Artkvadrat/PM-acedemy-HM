@@ -1,0 +1,52 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 18px;
+}
+
+.center {
+    display: block;
+    text-align: center;
+}
+
+form {
+    margin-top: 30px;
+    display: inline-block;
+}
+
+.flex {
+    display: flex;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
+.column label {
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.column input {
+    width: 163px;
+    margin-bottom: 10px;
+}
+
+form button {
+    margin-top: 15px;
+    padding: 5px;
+}
+
+#error, #result {
+    margin-top: 10px;
+}
+
+#error {
+    color: red;
+}

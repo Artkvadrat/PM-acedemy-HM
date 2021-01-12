@@ -1,0 +1,56 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#main {
+    display: flex;
+    padding: 10px;
+}
+
+#main p {
+    padding: 10px;
+    margin-right: 15px;
+    color: #dd4b00;
+    border: 2px solid #48b3db;
+    border-radius: 10px;
+    cursor: default;
+    font-family: 'Roboto', sans-serif;
+}
+
+#itemContextMenu,
+#addItemContextMenu {
+    position: absolute;
+    font-family: 'Roboto', sans-serif;
+    list-style: none;
+    background-color: white;
+    z-index: 10;
+    border: 1px solid #48b3db;
+    border-radius: 10px;
+    text-align: center;
+    width: auto;
+    color: #000;
+}
+
+#itemContextMenu li:not(:last-child) {
+    border-bottom: 1px solid #48b3db;
+}
+
+#itemContextMenu button,
+#addItemContextMenu button{
+    background-color: inherit;
+    border: 0;
+    padding: 10px;
+}
+
+#itemContextMenu button:hover,
+#addItemContextMenu button {
+    color: #dd4b00;
+    cursor: pointer;
+}
+
+#itemContextMenu button:focus,
+#addItemContextMenu button{
+    outline: none;
+}

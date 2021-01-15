@@ -1,6 +1,6 @@
 'use strict'
 
-let files = ['main.jpg', 'header.html'];
+let files = ['main.jpg', 'header.html', 'style.css', 'index.php'];
 
 /*
  * showing all files from array and adding event listener on every item
@@ -11,7 +11,7 @@ const updateContent = () => {
 
 
     files.map((item) => {
-        content += `<p>${item}</p>`;
+        content += `<p draggable="true">${item}</p>`;
     })
     main.innerHTML = content;
 
@@ -19,6 +19,10 @@ const updateContent = () => {
 
     for (let i = 0; i < allParagraphTags.length; i++) {
         allParagraphTags[i].addEventListener('contextmenu', customRightClickOnItem);
+        allParagraphTags[i].addEventListener('dragstart', dragStartHandler, false);
+        allParagraphTags[i].addEventListener('dragend', dragEndHandler, false);
+        allParagraphTags[i].addEventListener('dragover', dragOverHandler, false);
+        allParagraphTags[i].addEventListener('drop', dropHandler, false);
     }
 }
 
@@ -52,7 +56,6 @@ let activeFile = '';
 
 const hideContextMenu = (target) => {
     target.style.display = 'none';
-    activeFile = '';
 }
 
 const showContextMenu = (target, e) => {
@@ -87,6 +90,7 @@ function renameItem () {
         files[currentIndex] = newValue;
         updateContent();
     }
+    activeFile = '';
 }
 /*
  * Function for deleting item from array
@@ -115,10 +119,12 @@ function customRightClickOnDocument (event) {
     }
     return false;
 }
+/*
+ * Function for adding new filenames in array
+ */
 
 function addItem () {
     let newValue = prompt('Enter new file please');
-    console.log(newValue)
     if (newValue === '') {
         alert('You have entered wrong filename');
     } else if (!newValue) {
@@ -127,4 +133,46 @@ function addItem () {
         files.push(newValue);
         updateContent();
     }
+}
+
+/*
+ * Drag'n'Drop realisation
+ */
+
+let dragSrcEl = null;
+
+function dragStartHandler (e) {
+    this.style.opacity = '0.4';
+    dragSrcEl = this;
+    e.dataTransfer.effectAllowed = 'move';
+    e.dataTransfer.setData('text/html', this.innerHTML);
+}
+
+function dragOverHandler (e) {
+    e.preventDefault();
+
+    e.dataTransfer.dropEffect = 'move';
+
+    return false;
+}
+
+function dragEndHandler () {
+    this.style.opacity = '1';
+}
+
+function dropHandler (e) {
+
+    if (dragSrcEl !== this) {
+        dragSrcEl.innerHTML = this.innerHTML;
+        this.innerHTML = e.dataTransfer.getData('text/html');
+    }
+
+    let allParagraphTags = document.getElementsByTagName('p');
+    let newOrderArray = [];
+    for (let i = 0; i < allParagraphTags.length; i++) {
+        newOrderArray.push(allParagraphTags[i].innerText);
+    }
+
+    files = newOrderArray;
+    return false;
 }

@@ -1,4 +1,4 @@
-const startData = [
+let startData = [
     {
         id: 1,
         name: "Leanne Graham",
@@ -271,89 +271,8 @@ const startData = [
     }
 ];
 
-let hashTable = {};
+startData.sort((a, b) => {
+    return b.id - a.id ;
+});
 
-for (let i = 0; i < startData.length; i++) {
-    hashTable[startData[i].id] = startData[i];
-    Object.defineProperty(hashTable[startData[i].id], 'setPhoneForUser', {
-        set(v) {
-            const regForCheckingPhoneNumber = /\([0-9]{3}\) [0-9]{3}-[0-9]{2}-[0-9]{2}/g;
-            const isPhoneValid = v.match(regForCheckingPhoneNumber);
-            if (isPhoneValid) {
-                this.phone = v;
-            } else {
-                console.error('Phone is incorrect');
-            }
-        }
-    })
-}
-
-function getDataById() {
-    const id = Number(prompt('Enter id please:', '1'));
-
-    if (!isNaN(id)) {
-        if (hashTable.hasOwnProperty(id)) {
-            alert(JSON.stringify(hashTable[id], null, 4));
-        } else {
-            alert(`There isn't user with id: ${id}`);
-        }
-    } else {
-        alert('An error occurred, please try again')
-    }
-}
-
-function getAddressById() {
-    const id = Number(prompt('Enter id please:', '1'));
-
-    if (!isNaN(id)) {
-        if (hashTable.hasOwnProperty(id) && Object.values(hashTable[id].address).length !== 0) {
-            alert('User address: \n' + JSON.stringify(hashTable[id].address, null, 4));
-        } else {
-            alert(`There isn't user address with id: ${id}`);
-        }
-    } else {
-        alert('An error occurred, please try again')
-    }
-}
-
-function getUsersByCompanyName () {
-    const company = prompt('Enter company name please:', '');
-
-    if (company) {
-        let result = [];
-        for (let key in hashTable) {
-            if (hashTable[key].company.name === company) {
-                result.push(hashTable[key]);
-                alert(JSON.stringify(hashTable[key], null, 3));
-            }
-        }
-        if (result.length !== 0) {
-            console.log(JSON.stringify(result, null, 3));
-        } else {
-            alert(`There is no user with this company: ${company}`)
-        }
-    } else {
-        alert('An error occurred, please try again')
-    }
-}
-
-function immutableIdProperty () {
-    for (let key in hashTable) {
-        Object.defineProperty(hashTable[key], 'id', {enumerable: true, configurable: false, writable: false});
-    }
-}
-
-function setPhoneForUser () {
-    const id = Number(prompt('Enter id of user:', '1'));
-    if (!isNaN(id) && hashTable.hasOwnProperty(id)) {
-        const phone = prompt('Enter new telephone number:');
-        if (phone) {
-            hashTable[id].setPhoneForUser = phone;
-        } else {
-            alert('Phone is incorrect. Please try again');
-        }
-    } else {
-        alert('User id is incorrect.')
-    }
-}
-
+console.log(startData);

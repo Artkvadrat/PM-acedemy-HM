@@ -4,7 +4,7 @@ function extendWithEndless(...params) {
     let result = {};
 
     params.map((item) => {
-       result = Object.assign(result, item);
+       result = {...result, ...item}
     });
 
     return result;

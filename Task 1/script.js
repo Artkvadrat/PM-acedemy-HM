@@ -1,10 +1,7 @@
 const assert = require('assert');
 
 function multiplyBy(multiply, ...params) {
-    let result = [];
-    params.map((item) => result.push(item * multiply));
-
-    return result;
+    return params.map((item) => item * multiply);
 }
 
 assert.deepStrictEqual(multiplyBy(2, 3, 4, 5), [6, 8, 10]);

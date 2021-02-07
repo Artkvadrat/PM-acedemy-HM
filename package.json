@@ -1,0 +1,23 @@
+{
+  "name": "hm-9",
+  "version": "1.0.0",
+  "description": "Homework #9 for PM Tech Academy",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "coverage": "jest --collect-coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Artkvadrat/PM-acedemy-HM.git"
+  },
+  "author": "Danylo Nabok",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Artkvadrat/PM-acedemy-HM/issues"
+  },
+  "homepage": "https://github.com/Artkvadrat/PM-acedemy-HM#readme",
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
+}

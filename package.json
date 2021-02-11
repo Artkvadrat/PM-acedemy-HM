@@ -1,0 +1,19 @@
+{
+  "name": "homework-10",
+  "version": "1.0.0",
+  "description": "Homework for PM Academy",
+  "scripts": {
+    "dev": "parcel ./src/index.html"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.12.13",
+    "parcel-bundler": "^1.12.4"
+  },
+  "dependencies": {
+    "@babel/plugin-transform-runtime": "^7.12.15",
+    "@babel/runtime": "^7.12.13",
+    "regenerator-runtime": "^0.13.7"
+  }
+}

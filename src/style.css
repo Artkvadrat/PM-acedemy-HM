@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    padding-top: 50px;
+}
+
+.search {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 20px;
+}
+
+#searchForm {
+    display: flex;
+    margin: 0 auto;
+}
+
+#searchForm input {
+    display: block;
+    height: 28px;
+    width: 180px;
+    padding: 0 5px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+#searchForm input:focus {
+    outline: none;
+}
+
+#searchForm button {
+    background-color: inherit;
+    border: 1px solid black;
+    padding: 5px 10px;
+    border-radius: 5px;
+}

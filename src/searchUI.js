@@ -23,9 +23,12 @@ class SearchUI {
         e.preventDefault();
         let result = await HttpService.request(`users/${this.searchInput.value}`);
         if (result.message === 'Not Found') {
-            console.log('No result');
+            User.user = '';
+            emitter.emit('foundedUser');
         } else {
             User.user = result;
+            User.repos = await HttpService.request(`users/${this.searchInput.value}/repos`);
+            User.followers = await HttpService.request(`users/${this.searchInput.value}/followers`);
             emitter.emit('foundedUser');
         }
     }

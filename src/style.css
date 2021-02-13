@@ -41,3 +41,71 @@ body {
     padding: 5px 10px;
     border-radius: 5px;
 }
+
+#userContainer {
+    display: block;
+    text-align: center;
+    margin-top: 50px;
+}
+
+
+.user {
+    display: flex;
+    margin: 50px auto 0 auto;
+    max-width: 300px;
+    border: 1px solid gray;
+    box-shadow: 0 0 3px 3px darkgray;
+    padding: 20px;
+}
+
+.user img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.user a {
+    text-decoration: underline;
+    color: #000;
+}
+
+.user div:last-child {
+    padding-top: 30px;
+    padding-left: 30px;
+}
+
+#userRepos ul,
+#userFollowers ul {
+    list-style: none;
+    margin-top: 50px;
+    text-align: center;
+}
+
+#userRepos ul {
+    margin-right: 25px;
+}
+
+#userRepos ul li {
+    margin: 5px;
+}
+
+#userFollowers ul li {
+    margin-top: 20px;
+    display: flex;
+}
+
+#userFollowers ul li img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+#userFollowers ul li h3 {
+    margin-top: 40px;
+    margin-left: 20px;
+}
+
+#userRepos ul li a,
+#userFollowers ul li a {
+    color: #000;
+}

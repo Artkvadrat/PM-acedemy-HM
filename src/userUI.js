@@ -16,8 +16,10 @@ class UserUI {
 
     render() {
         this.userContainer.innerHTML = this.createUserElement(User.user);
-        this.userRepos.innerHTML = this.createReposElement(User.repos);
-        this.userFollowers.innerHTML = this.createFollowersElement(User.followers);
+        if (User.user) {
+            this.userRepos.innerHTML = this.createReposElement(User.repos);
+            this.userFollowers.innerHTML = this.createFollowersElement(User.followers);
+        }
     }
 
     init() {
@@ -38,7 +40,7 @@ class UserUI {
                   </div>
                 </div>`;
         } else {
-            return `<h3>User not found</h3>`
+            return '<h3>User not found</h3>';
         }
     }
 

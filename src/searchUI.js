@@ -1,6 +1,7 @@
 import HttpService from "./HttpService";
 import User from "./user";
 import emitter from './EventEmitter';
+import { debounce } from "./debounce";
 
 class SearchUI {
     constructor() {
@@ -12,11 +13,12 @@ class SearchUI {
         this.init = this.init.bind(this);
         this.searchFormSubmit = this.searchFormSubmit.bind(this);
 
-        this.init();
+        this.render = debounce(this.render, 500);
     }
 
-    render() {
+    render(e) {
         this.searchFormButton.disabled = this.searchInput.value === '';
+        this.searchFormSubmit(e);
     }
 
     async searchFormSubmit(e) {
@@ -24,6 +26,8 @@ class SearchUI {
         let result = await HttpService.request(`users/${this.searchInput.value}`);
         if (result.message === 'Not Found') {
             User.user = '';
+            User.repos = '';
+            User.followers = '';
             emitter.emit('foundedUser');
         } else {
             User.user = result;

@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import parseDate from "./utils/parseDate.js";
 import parseWindDirection from "./utils/parseWindDirection";
 import parseGeneralDescription from "./utils/parseGeneralDescription";
@@ -10,21 +10,11 @@ import pressureImg from './img/atmospheric.png';
 
 import styles from './weatherCard.module.css';
 
-const WeatherCard = ({data}) => {
-    const { date,
-        minTemp,
-        maxTemp,
-        pressure,
-        humidity,
-        windSpeed,
-        windDirection,
-        generalDescription } = data;
-
+const WeatherCard = ({date, minTemp, maxTemp, pressure, humidity, windSpeed, windDirection, generalDescription }) => {
 
     const parsedDate = parseDate(new Date(date));
     const parsedWind = parseWindDirection(windDirection);
     const weatherImg = parseGeneralDescription(generalDescription);
-    console.log(parsedWind)
 
     return <React.Fragment>
         <p>{parsedDate}</p>

@@ -1,4 +1,4 @@
-#Homework №11 for PM Tech Academy
+# Homework №11 for PM Tech Academy
 
 To start dev server on localhost:3000:
 - run `npm install`

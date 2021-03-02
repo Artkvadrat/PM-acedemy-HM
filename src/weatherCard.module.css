@@ -1,0 +1,32 @@
+.temperature,
+.humidity,
+.wind,
+.pressure {
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.temperature p,
+.humidity p,
+.wind p,
+.pressure p {
+    margin: 0;
+}
+
+.temperature img,
+.humidity img,
+.wind img,
+.pressure img {
+    height: 30px;
+    width: 30px;
+}
+
+.wind p:nth-child(2) {
+    font-size: 18px;
+}
+
+.wind p:nth-child(2) img {
+    max-height: 18px;
+    width: auto;
+}

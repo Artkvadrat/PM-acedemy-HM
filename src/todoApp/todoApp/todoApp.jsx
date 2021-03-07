@@ -1,5 +1,8 @@
 import React from 'react';
 import TodoItemsList from "../todoItemsList/todoItemsList";
+import SearchTextInTodos from "../searchTextInTodos/searchTextInTodos";
+
+import styles from './todoApp.module.css';
 
 class TodoApp extends React.Component {
 
@@ -10,12 +13,16 @@ class TodoApp extends React.Component {
             userList: [],
             todos: [],
             selectedUser: 1,
+            searchKeywords: '',
         };
+
+        this.titleInputRef = React.createRef();
 
         this.setUserList = this.setUserList.bind(this);
         this.getUserTodos = this.getUserTodos.bind(this);
         this.changeStatusInState = this.changeStatusInState.bind(this);
         this.addTodoItem = this.addTodoItem.bind(this);
+        this.setSearchKeywords = this.setSearchKeywords.bind(this);
     }
 
     setUserList (userList) {
@@ -42,6 +49,14 @@ class TodoApp extends React.Component {
             }));
     }
 
+    setSearchKeywords (value) {
+        this.setState(() => {
+            return {
+                searchKeywords: value,
+            }
+        })
+    }
+
     onSelectChange (e) {
         this.setState( () => {
             return {
@@ -64,8 +79,11 @@ class TodoApp extends React.Component {
 
     addTodoItem (e) {
         e.preventDefault();
+
+        const title = e.target[0].value;
+
         const body = {
-            title: e.target[0].value,
+            title: title,
             completed: false,
             userId: this.state.selectedUser,
         }
@@ -79,13 +97,16 @@ class TodoApp extends React.Component {
             const newTodo = {
                 userId: Number(this.state.selectedUser),
                 id: this.state.todos[this.state.todos.length-1].id + 1,
-                title: e.target[0].value,
+                title: title,
                 completed: false,
             };
             return {
                 todos: [...state.todos, newTodo]
             }
-        })
+        });
+
+        e.target[0].value = '';
+        this.titleInputRef.current.focus();
     }
 
     componentDidMount() {
@@ -107,11 +128,11 @@ class TodoApp extends React.Component {
 
     render() {
 
-        const { userList, todos } = this.state;
+        const { userList, todos, searchKeywords } = this.state;
 
         return (
             <React.Fragment>
-                <div>
+                <div className={styles.todoHeader}>
                     <select name="users" id="users" onChange={ (event) => this.onSelectChange(event) }>
                         {userList.map( item => {
                             return <option value={item.id} key={item.id}>{item.name}</option>
@@ -119,12 +140,14 @@ class TodoApp extends React.Component {
                     </select>
 
                     <form onSubmit={this.addTodoItem}>
-                        <input type="text" required/>
+                        <input type="text" ref={this.titleInputRef} required placeholder='Type new todo here'/>
                         <button type='submit'>Add</button>
                     </form>
+
+                    <SearchTextInTodos setSearchKeywords={this.setSearchKeywords}/>
                 </div>
 
-                <TodoItemsList todosArray={todos} changeHandler={this.changeStatusInState}/>
+                <TodoItemsList todosArray={todos} changeHandler={this.changeStatusInState} searchValue={searchKeywords}/>
 
             </React.Fragment>
 

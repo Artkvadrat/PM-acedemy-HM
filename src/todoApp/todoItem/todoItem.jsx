@@ -4,17 +4,34 @@ import classNames from 'classnames';
 
 import styles from './todoItem.module.css';
 
-const TodoItem = ({id, title, status, onStatusChange, changeHandler}) => {
+const TodoItem = ({id, title, status, onStatusChange, changeHandler, searchValue}) => {
+
+    let text;
+    let index;
+
+    if (searchValue) {
+        index = title.indexOf(searchValue);
+    } else {
+        index = -1;
+    }
+
+
+    if (index === -1) {
+        text = {__html: title}
+    } else {
+        let result = title.substr(0, index) + `<b>${searchValue}</b>` + title.substr(index+searchValue.length);
+        text = {__html: result}
+    }
 
     return <li className={classNames(styles.list, {
         [styles.done]: status,
     })}>
-        { title }
+        <p dangerouslySetInnerHTML={text}/>
         <button onClick={() => {
             changeHandler(id);
             onStatusChange(id, status);
         }}>
-            click
+            X
         </button>
     </li>
 }

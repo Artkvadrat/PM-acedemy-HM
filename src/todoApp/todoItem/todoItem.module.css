@@ -1,7 +1,29 @@
 .list {
-    border: 1px solid black;
+    margin-bottom: 15px;
+    height: 30px;
+    background-color: inherit;
+    border: 1px solid #484848;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    line-height: 30px;
+    border-radius: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .done {
-    background-color: red;
+    background-color: #70ff67;
+}
+
+.list button {
+    background-color: inherit;
+    width: 30px;
+    border: 0;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.list button:focus {
+    outline: none;
 }

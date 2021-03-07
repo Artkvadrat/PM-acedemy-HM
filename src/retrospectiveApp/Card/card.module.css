@@ -1,0 +1,96 @@
+.card {
+    color: #b1b7c3;
+    background-color: #090a0c;
+    width: 85%;
+    margin: 15px auto;
+    border-radius: 15px;
+    text-align: justify;
+    padding: 10px;
+    word-wrap: break-word;
+    font-size: 18px;
+}
+
+.textRow button {
+    background-color: inherit;
+    border: 0;
+    cursor: pointer;
+    float: right;
+}
+
+.textRow button:focus {
+    outline: none;
+}
+
+.textRow button img {
+    width: 20px;
+    height: 20px;
+}
+
+.textRow p {
+    margin-top: 5px;
+}
+
+.date {
+    margin-top: 15px;
+}
+
+.changeTitleForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.changeTitleForm textarea {
+    width: 90%;
+    margin: 0 auto;
+    resize: none;
+    line-height: 25px;
+    font-size: 20px;
+    border: 0;
+    background-color: #1e1f23;
+    color: #b1b7c3;
+    border-radius: 10px;
+}
+
+.changeTitleForm textarea:focus {
+    outline: none;
+    border: 1px solid #0064fe;
+}
+
+.changeTitleForm button {
+    width: 50%;
+    margin-left: auto;
+    margin-right: 4%;
+    margin-top: 20px;
+    background-color: #0064fe;
+    border: 0;
+    height: 30px;
+    border-radius: 5px;
+    color: #b1b7c3;
+    font-weight: 600;
+}
+
+.likesRow {
+    margin-top: -15px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.likesRow p {
+    font-size: 20px;
+    margin: 5px;
+}
+
+.likesRow button {
+    background-color: inherit;
+    border: 0;
+    cursor: pointer;
+}
+
+.likesRow button:focus {
+    outline: none;
+}
+
+.likesRow button img {
+    width: 25px;
+    height: 25px;
+}

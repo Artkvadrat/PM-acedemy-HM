@@ -1,0 +1,18 @@
+.wrapper ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+}
+
+.wrapper ul li {
+    margin: 20px;
+    border: 1px solid black;
+    border-radius: 20px;
+    min-width: 230px;
+    min-height: 150px;
+    text-align: center;
+}
+
+.wrapper ul li img:first-child {
+    max-width: 50px;
+}

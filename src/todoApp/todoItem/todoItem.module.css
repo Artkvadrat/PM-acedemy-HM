@@ -1,0 +1,7 @@
+.list {
+    border: 1px solid black;
+}
+
+.done {
+    background-color: red;
+}

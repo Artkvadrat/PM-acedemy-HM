@@ -1,0 +1,26 @@
+.navbar {
+    width: 100%;
+    height: 3vh;
+    background-color: #143ca9;
+    display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.logo {
+    margin-left: 30px;
+}
+
+.links {
+    margin-left: 30px;
+    margin-top: 5px;
+}
+
+.links a:not(:last-child) {
+    margin-right: 20px;
+}

@@ -1,0 +1,37 @@
+.generalForm {
+    display: flex;
+    flex-direction: column;
+    margin: 200px auto;
+    width: 500px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.generalForm label {
+    margin: 10px 0;
+}
+
+.generalForm input {
+    height: 30px;
+    padding-left: 10px;
+    border: 2px solid #000;
+    border-radius: 10px;
+}
+
+.generalForm input:focus {
+    outline: none;
+    border: 2px solid #00c5ff;
+}
+
+.submitGeneralFormButton {
+    width: 100px;
+    margin: 20px auto;
+    padding: 5px;
+    background-color: inherit;
+    border: 3px solid #00228d;
+    border-radius: 15px;
+}
+
+.submitGeneralFormButton:focus {
+    outline: none;
+}

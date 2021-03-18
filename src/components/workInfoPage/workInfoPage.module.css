@@ -1,0 +1,60 @@
+.workForm {
+    display: flex;
+    flex-direction: column;
+    margin: 100px auto 0 auto;
+    width: 500px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.workForm label {
+    margin: 10px 0;
+}
+
+.workForm input {
+    height: 30px;
+    padding-left: 10px;
+    border: 2px solid #000;
+    border-radius: 10px;
+}
+
+.workForm input:focus {
+    outline: none;
+    border: 2px solid #00c5ff;
+}
+
+.submitWorkFormButton {
+    width: 100px;
+    margin: 20px auto;
+    padding: 5px;
+    background-color: inherit;
+    border: 3px solid #00c5ff;
+    border-radius: 15px;
+}
+
+.submitWorkFormButton:focus {
+    outline: none;
+}
+
+.workNavigationBlock {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.workNavigationBlock > button {
+    width: 200px;
+    margin: 20px auto;
+    padding: 5px;
+    background-color: inherit;
+    border: 3px solid #00228d;
+    border-radius: 15px;
+}
+
+.workNavigationBlock div button {
+    width: 100px;
+    margin: 20px;
+    padding: 5px;
+    background-color: inherit;
+    border: 3px solid #00228d;
+    border-radius: 15px;
+}

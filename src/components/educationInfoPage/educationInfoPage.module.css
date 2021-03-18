@@ -1,0 +1,60 @@
+.educationForm {
+    display: flex;
+    flex-direction: column;
+    margin: 100px auto 0 auto;
+    width: 500px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.educationForm label {
+    margin: 10px 0;
+}
+
+.educationForm input {
+    height: 30px;
+    padding-left: 10px;
+    border: 2px solid #000;
+    border-radius: 10px;
+}
+
+.educationForm input:focus {
+    outline: none;
+    border: 2px solid #00c5ff;
+}
+
+.submitEducationFormButton {
+    width: 100px;
+    margin: 20px auto;
+    padding: 5px;
+    background-color: inherit;
+    border: 3px solid #00c5ff;
+    border-radius: 15px;
+}
+
+.submitEducationFormButton:focus {
+    outline: none;
+}
+
+.educationNavigationBlock {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.educationNavigationBlock > button {
+    width: 200px;
+    margin: 20px auto;
+    padding: 5px;
+    background-color: inherit;
+    border: 3px solid #00228d;
+    border-radius: 15px;
+}
+
+.educationNavigationBlock div button {
+    width: 100px;
+    margin: 20px;
+    padding: 5px;
+    background-color: inherit;
+    border: 3px solid #00228d;
+    border-radius: 15px;
+}

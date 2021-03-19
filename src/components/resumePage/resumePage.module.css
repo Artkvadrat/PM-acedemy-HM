@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.resumeBlock {
+    width: 1000px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #e7e7e7;
+    font-family: 'Roboto', sans-serif;
+}
+
+.nameBlock {
+    margin-bottom: 30px;
+}
+
+.nameBlock h1 {
+    padding-bottom: 15px;
+}
+
+.educationBlock {
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.educationItem,
+.workItem {
+    display: flex;
+    margin-top: 20px;
+}
+
+.educationItem > div,
+.workItem > div {
+    width: 250px;
+}
+
+.educationItem h4,
+.workItem h4 {
+    font-size: 20px;
+}
+
+.educationItem p,
+.workItem p{
+    font-size: 12px;
+}
+
+.experienceBlock {
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.contactBlock {
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.contactBlock div {
+    display: flex;
+    margin-top: 15px;
+}
+
+.contactBlock div img {
+    width: 20px;
+    height: 20px;
+}
+
+.contactBlock div p {
+    font-size: 15px;
+    margin-left: 15px;
+}

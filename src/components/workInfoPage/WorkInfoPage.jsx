@@ -38,7 +38,7 @@ const EducationForm = ({ initialValue, id, addData }) => {
             <label htmlFor="dateEnd">Дата окончания работы</label>
             <input type="text" id='dateEnd' value={data.dateEnd} required onChange={onChangeHandler}/>
 
-            <button type='submit' className={styles.submitWorkFormButton}>Submit</button>
+            <button type='submit' className={styles.submitWorkFormButton}>Добавить</button>
         </form>
     )
 }
@@ -91,7 +91,7 @@ const EducationInfoPage = () => {
     }, [history]);
 
     const goToNextPage = useMemo(() => () => {
-        history.push('/result');
+        history.push('/resume');
     }, [history]);
 
     return (
